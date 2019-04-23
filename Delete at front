@@ -4,7 +4,14 @@
 void delete_at_front(node **header)
 {
   node *temp;
-  temp = *header;
-  *header = (*header)->link;
-  free(temp);
+  if(*header == NULL)
+  {
+    printf("List is empty\n");
+  }
+  else
+  {
+    temp = *header;
+    *header = (*header)->link;
+    free(temp);
+  }
 }
